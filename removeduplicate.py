@@ -1,7 +1,10 @@
-string = "james"
-
+string = "James chizurum".lower()
+maxchar1  = ""
+maxchar2 = ""
 duplicates = []
-
+singorplu = ""
+singorplu2 = ""
+singorplu3 = ""
 
 # store the duplicate values in a list
 for i in string:
@@ -9,29 +12,31 @@ for i in string:
 
         if i not in duplicates:
             duplicates.append(i)
-    else:
-        print("No duplicate value")
-						
 
-
-#store the numbers of times each character
+#store the number of times each character
 #appear in the string in a list
 maxN = []
+
 for r in duplicates:
 	if r not in maxN:
 		maxN.append(string.count(r))
 
-
-# create empty list to store characters that has the highest occuranc
+# create empty list to store characters that has the highest occurance
 maxChar = [] 
 
+outputText = "{} are the duplicates and also the maximum characters because {} appears {} times more  than other characters in the string"
 
-outputText = "{} is the maximum character because it appears {} times than others"
-
-
-for k in string:
-	if string.count(k) == max(maxN) and maxN.len() != 0:
-		maxChar.append(k)
-		
-print(outputText.format(maxChar[1], max(maxN)))
-
+if len(maxN) > 0:
+    for k in string:
+        if string.count(k) == max(maxN):
+            maxChar.append(k)
+    for n in maxChar:
+        if maxChar.count(n) == max(maxN):
+            maxchar1 += n
+    charset = set(maxchar1)
+    for characters in charset:
+        maxchar2 += characters + ", "
+    print(outputText.format(maxchar2, maxchar2,  max(maxN)))
+									
+else:
+	print("No duplicate or maximum character found")
