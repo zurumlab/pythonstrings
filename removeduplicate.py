@@ -1,10 +1,26 @@
-string = "James chizurum".lower()
+# This code takes input from user and convert it to strings  and filter out the 
+#  duplicatate characters in the user input and display the characters that has the highest occurance and display number of times it occur in the string
+# example a = "hdhhhg" h is maximum and is 4 in number
+
+string = ""
 maxchar1  = ""
 maxchar2 = ""
 duplicates = []
-singorplu = ""
-singorplu2 = ""
-singorplu3 = ""
+
+user = input("Enter a value: \n")
+
+while len(user) < 1:
+	print("You have not Entered anything, please enter a value first: \n")
+	user = input("Enter a value: \n")
+if len(user) > 1:
+	string += user.lower()
+
+if len(string) > 1:
+    string += user
+else:
+    print("Please enter a value\n")
+    userInput = input("Enter characters: \n")
+
 
 # store the duplicate values in a list
 for i in string:
